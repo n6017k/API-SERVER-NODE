@@ -14,7 +14,7 @@ on:
 
 env:
     ACR_RG: nk-pass-stack-rg
-    ACR: nkacr1
+    ACR: nkacr2
     CLUSTER_NAME: nk-cluster
     CLUSTER_RG: nk-pass-stack-rg
     CONTAINER_NAME: echo-api

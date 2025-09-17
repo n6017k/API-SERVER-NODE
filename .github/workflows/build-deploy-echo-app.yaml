@@ -13,10 +13,10 @@ on:
   workflow_dispatch:
 
 env:
-    ACR_RG: nkcontainers-rg
-    ACR: nkcontainers
+    ACR_RG: nk-pass-stack-rg
+    ACR: nkacr1
     CLUSTER_NAME: nk-cluster
-    CLUSTER_RG: nk-aks-rg
+    CLUSTER_RG: nk-pass-stack-rg
     CONTAINER_NAME: echo-api
     CONTAINER_TAG: v1.0.0
 

@@ -14,7 +14,7 @@ on:
 
 env:
     ACR_RG: nkcontainers-rg
-    ACR: container-registory-rg
+    ACR: nkcontainers
     CLUSTER_NAME: nk-cluster
     CLUSTER_RG: nk-aks-rg
     CONTAINER_NAME: echo-api

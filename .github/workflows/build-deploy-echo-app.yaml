@@ -41,10 +41,12 @@ jobs:
       - name: check Azure account
         run: az account show
 
-      - name: Build and push image to ACR
+      - name: check ACR health
         run: |
           az acr repository list --name "nktest" --output table
 
+      - name: Build and push image to ACR
+        run: |
           az acr build \
           --image "${{ env.ACR }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }}" \
           --registry ${{ env.ACR }} \

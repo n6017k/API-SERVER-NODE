@@ -14,7 +14,7 @@ on:
 
 env:
     ACR_RG: nk-aks-rg
-    ACR: nkacr2
+    ACR: nktest
     ACR_CODE: hffchwhactgvaxa0
     CLUSTER_NAME: nk-cluster
     CLUSTER_RG: nk-aks-rg
@@ -44,5 +44,11 @@ jobs:
       - name: Build and push image to ACR
         run: |
           az acr repository list --name "nktest" --output table
+
+          az acr build \
+          --image "${{ env.ACR }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }}" \
+          --registry ${{ env.ACR }} \
+          -g ${{ env.ACR_RG }} \
+          -f ./dockerfiles/Dockerfile .
           
         

@@ -43,6 +43,6 @@ jobs:
 
       - name: Build and push image to ACR
         run: |
-          az acr repository list --name ${{ env.ACR }} --output table
+          az acr repository list --name "nkacr2-hffchwhactgvaxa0.azurecr.io" --output table
           
         

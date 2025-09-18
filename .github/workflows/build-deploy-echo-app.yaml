@@ -45,7 +45,7 @@ jobs:
         run: |
           image=$("${{ env.ACR }}-${{env.ACR_CODE}}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }}")
           echo "Building image: $image"
-          
+          az acr repository list --name ${{ env.ACR }} --output table
           # az acr build \
           # --image $image \
           # --registry ${{ env.ACR }} \

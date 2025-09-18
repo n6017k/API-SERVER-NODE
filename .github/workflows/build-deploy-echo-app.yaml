@@ -15,7 +15,7 @@ on:
 env:
     ACR_RG: nk-aks-rg
     ACR: nkacr2
-    ACR_CODE: domain-code
+    ACR_CODE: hffchwhactgvaxa0
     CLUSTER_NAME: nk-cluster
     CLUSTER_RG: nk-aks-rg
     CONTAINER_NAME: echo-api
@@ -43,8 +43,10 @@ jobs:
 
       - name: Build and push image to ACR
         run: |
+          image = "${{ env.ACR }}-${{env.ACR_CODE}}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }}"
+          echo "Building image: $image"
           az acr build \
-          --image ${{ env.ACR }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }} \
+          --image $image \
           --registry ${{ env.ACR }} \
           -g ${{ env.ACR_RG }} \
           -f ./dockerfiles/Dockerfile .

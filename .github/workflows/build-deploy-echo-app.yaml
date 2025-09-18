@@ -45,9 +45,10 @@ jobs:
         run: |
           image=$("${{ env.ACR }}-${{env.ACR_CODE}}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ env.CONTAINER_TAG }}")
           echo "Building image: $image"
-          az acr build \
-          --image $image \
-          --registry ${{ env.ACR }} \
-          -g ${{ env.ACR_RG }} \
-          -f ./dockerfiles/Dockerfile .
+          
+          # az acr build \
+          # --image $image \
+          # --registry ${{ env.ACR }} \
+          # -g ${{ env.ACR_RG }} \
+          # -f ./dockerfiles/Dockerfile .
         

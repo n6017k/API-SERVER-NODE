@@ -3,3 +3,5 @@
           # --registry ${{ env.ACR }} \
           # -g ${{ env.ACR_RG }} \
           # -f ./dockerfiles/Dockerfile .
+
+az acr build --image nktest.azure.io/test-image:latest --registry nktest -g nk-aks-rg -f ./dockerfiles/Dockerfile .
